@@ -1,3 +1,11 @@
+Meteor.publish('userCreatedProjects', function() {
+  return Projects.find({createdBy: this.userId});
+});
+
+Meteor.publish('userJoinedProjects', function() {
+  return Projects.find({users: { $in: [this.userId]}});
+});
+
 Meteor.publish('posts', function(options) {
   check(options, {
     sort: Object,
@@ -10,7 +18,6 @@ Meteor.publish('singlePost', function(id) {
   check(id, String);
   return Posts.find(id);
 });
-
 
 Meteor.publish('comments', function(postId) {
   check(postId, String);

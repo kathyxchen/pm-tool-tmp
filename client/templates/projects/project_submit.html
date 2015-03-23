@@ -1,0 +1,12 @@
+<template name="projectSubmit">
+  <form class="main form page">
+    <div class="form-group {{errorClass 'url'}}">
+      <label class="control-label" for="project-name">Project Name</label>
+      <div class="controls">
+          <input name="project-name" id="project-name" type="text" value="" placeholder="Your Project" class="form-control"/>
+          <span class="help-block">{{errorMessage 'name'}}</span>
+      </div>
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary"/>
+  </form>
+</template>
