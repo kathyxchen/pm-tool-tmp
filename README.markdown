@@ -1,3 +1,15 @@
+# STARTUP INSTRUCTIONS: 
+
+Before you can run this project, you will need to install Meteor with Autoparts, and install Meteorite with NPM.
+
+Run the following commands in the Terminal below:
+
+1. `cd pm-tool-tmp`
+2. `parts install meteor` (IF YOU HAVEN'T INSTALLED METEOR ALREADY.)
+3. `npm install -g meteorite` (If this doesn't work, you may need to do `sudo npm install -g meteorite`)
+4. `mrt update`
+5. `meteor` (Again, if you used sudo before, do `sudo meteor`)
+
 # Microscope
 
 Microscope is a simple social news app that lets you share links, comment, and vote on them.
