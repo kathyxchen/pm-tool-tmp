@@ -5,7 +5,7 @@
   		{{> esInput index="searchUsers" placeholder="Search for a user..." }}
   		<ul>
 	        {{#esEach index="searchUsers"}}
-	            <button class="project-users-add" id="{{_id}}">User <strong>{{username}}</strong></button>
+	            <button class="project-user-add" id="{{_id}}">User <strong>{{username}}</strong></button>
 	            <br />
 	        {{/esEach}}
 	    </ul>
@@ -13,9 +13,10 @@
     </div>
 	
 	<!--this is here just to test that users are added correctly--> 
-	<div id="tmp-users-in-project">
-		{{#each projectMember}}
-			{{this.name}}
+	<div class="project-info" id="{{this._id}}">
+		<strong>Project Name:</strong> {{this.name}}
+		{{#each this.users}}
+		<li>{{this}}</li>
 		{{/each}}
 	</div>
 
