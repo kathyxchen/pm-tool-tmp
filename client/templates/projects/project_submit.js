@@ -17,6 +17,7 @@ Template.projectSubmit.events({
     
     var project = {
       name: $(e.target).find('[name=project-name]').val(),
+      users: [Meteor.user().username]
     };
     
     var errors = validateProject(project);
