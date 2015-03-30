@@ -2,9 +2,9 @@
 
 	<div class="project-users-search">
         Add a user to this project.<br/>
-  		{{> esInput index="searchUsers" placeholder="Search for a user..." }}
+  		{{> esInput index="searchUsers" placeholder="Search for a user..." id="user-search-bar" }}
   		<ul>
-	        {{#esEach index="searchUsers"}}
+	        {{#esEach id="user-search-bar" index="searchUsers"}}
 	            <button class="project-user-add" id="{{_id}}">User <strong>{{username}}</strong></button>
 	            <br />
 	        {{/esEach}}
@@ -16,7 +16,7 @@
 	<div class="project-info" id="{{this._id}}">
 		<strong>Project Name:</strong> {{this.name}}
 		{{#each this.users}}
-		<li>{{this}}</li>
+		<li>{{this}} <a href="#" class="remove-user" id={{this}}>delete</a></li>
 		{{/each}}
 	</div>
 

@@ -6,6 +6,10 @@ Meteor.publish('userJoinedProjects', function() {
   return Projects.find({users: { $in: [this.userId]}});
 });
 
+Meteor.publish('projects', function() {
+  return Projects.find({});
+});
+
 Meteor.publish('posts', function(options) {
   check(options, {
     sort: Object,
