@@ -28,19 +28,19 @@ There are a number of folders/pages that we aren't actually using for this itera
 
 ## Top-level Directories: 
 ### Client
-	#### Templates: 
-		- The `application` folder contains the wrapper, the `{{> yield}}` handlebar just makes sure that the header (stored in `includes` folder) stays fixed when all the other pages change. Click through the links in the header to see this behavior. 
-		- The `projects` folder is the only new thing that I've added for iteration 1. Inside are a number of templates that pertain to views after a user has created a project. 
-		- Links to some of the projects templates are added in the `header.html` file (see in `includes` folder).
+	Templates: 
+	1. The `application` folder contains the wrapper, the `{{> yield}}` handlebar just makes sure that the header (stored in `includes` folder) stays fixed when all the other pages change. Click through the links in the header to see this behavior. 
+	2. The `projects` folder is the only new thing that I've added for iteration 1. Inside are a number of templates that pertain to views after a user has created a project. 
+	3. Links to some of the projects templates are added in the `header.html` file (see in `includes` folder).
 
 
 ### Lib
-	- The `router.js` is the most important part for linking a newly created template to your application. You can't see your template if it's not linked inside the router. If you don't know how this works, please read the documentation, find a tutorial, or shoot me a message. 
-	- The `collections` folder is how all the mongodb collections are made. Each one also contains server-side methods that will allow you to add, delete, update, etc. an item in your collection. A lot of these have a `check()` function in them--look at the Meteor documentation for `check()` (it's basically just to ensure your inputs are correctly typed).
+	1. The `router.js` is the most important part for linking a newly created template to your application. You can't see your template if it's not linked inside the router. If you don't know how this works, please read the documentation, find a tutorial, or shoot me a message. 
+	2. The `collections` folder is how all the mongodb collections are made. Each one also contains server-side methods that will allow you to add, delete, update, etc. an item in your collection. A lot of these have a `check()` function in them--look at the Meteor documentation for `check()` (it's basically just to ensure your inputs are correctly typed).
 
 ### Server
-	- `fixtures.js` is just some temporary data that came with the Microscope application. Don't worry about this, but it's good if you feel like adding test data. 
-	- `publications.js` is used in relation to the `waitOn` attribute in all the `Router.route` objects. We need to subscribe to certain fields in a collection rather than subscribing to everything all the time because we need to limit client access. 
+	1. `fixtures.js` is just some temporary data that came with the Microscope application. Don't worry about this, but it's good if you feel like adding test data. 
+	2. `publications.js` is used in relation to the `waitOn` attribute in all the `Router.route` objects. We need to subscribe to certain fields in a collection rather than subscribing to everything all the time because we need to limit client access. 
 
 ### (Takeaways: if none of this makes sense, there's a ton of documentation, so please Google!!)
 
