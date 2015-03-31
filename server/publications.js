@@ -1,9 +1,16 @@
 Meteor.publish('userCreatedProjects', function() {
-  return Projects.find({createdBy: this.userId});
+  var username = Meteor.users.findOne({_id: this.userId}, {fields: {'username': 1}}).username;
+  return Projects.find({createdBy: username});
+});
+
+Meteor.publish('userManagedProjects', function() {
+  var username = Meteor.users.findOne({_id: this.userId}, {fields: {'username': 1}}).username;
+  return Projects.find({manager: username});
 });
 
 Meteor.publish('userJoinedProjects', function() {
-  return Projects.find({users: { $in: [this.userId]}});
+  var username = Meteor.users.findOne({_id: this.userId}, {fields: {'username': 1}}).username;
+  return Projects.find({users: { $in: [username]}});
 });
 
 Meteor.publish('projects', function() {

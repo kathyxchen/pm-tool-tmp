@@ -10,6 +10,22 @@ Run the following commands in the Terminal below:
 4. `mrt update`
 5. `meteor` (Again, if you used sudo before, do `sudo meteor`)
 
+# VIEW MONGODB DATABASE:
+
+You can view your local mongodb database by running `meteor mongo` (if you used sudo before, this is `sudo meteor mongo`) in a new tab. Note that this only works if the app is already running in a new tab/window. 
+
+This database's contents are saved locally on your laptop. It won't get updated when you push/pull from git, but it will persist whenever you start up your local application. 
+
+See the mongodb and Meteor documentation whenever you need to remove, find, etc. anything in the collections. 
+
+
+Examples: 
+1. If I run `show collections` I can see what collections (this is the same thing as tables in MySQL) are in my mongodb database. 
+2. If I run `db.users.find()` any existing users will show up. 
+3. These collections are created in the `lib/collections` folder in our application.  
+
+
+
 # Microscope
 
 Microscope is a simple social news app that lets you share links, comment, and vote on them.

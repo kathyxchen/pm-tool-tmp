@@ -1,0 +1,32 @@
+<template name="userProjectsList">
+	<!-- manager of these projects --> 
+	<div class="row my-managed-projects">
+		<h3>Managed Projects:</h3>
+			{{#each managed}}
+				{{> singleProjectStub}}
+			{{else}}
+				<h5 class="col-md-8"> No projects to show. </h5>
+			{{/each}}
+	</div>
+	
+	<!-- joined meaning you are only a member, not the PM -->
+	<div class="row myJoinedProjects">
+		<h3>Other Project Involvements:</h3>
+			{{#each member}}
+				{{> singleProjectStub}}
+			{{else}}
+				<h5 class="col-md-8"> No projects to show. </h5>
+			{{/each}}
+	</div>
+</template>
+
+
+
+
+<template name="singleProjectStub">
+  <div class="project">
+    <div class="project-content col-xs-9">
+      <h3 class="col-md-8"><a href="{{pathFor 'projectView' _id=this._id}}">{{name}}</a> <small>Manager: {{manager}}</small></h3>
+    </div>
+  </div>
+</template>
