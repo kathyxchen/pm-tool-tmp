@@ -5,8 +5,11 @@ if (Meteor.isClient) {
 		}
 	}); 
 
+	// this part is already done in the helpers/config.js 
+	/*
   	Accounts.ui.config({
-  	passwordSingupFields: "EMAIL_ONLY"
-  });
+  		passwordSignupFields: "EMAIL_ONLY"
+  	});
+  	*/
 }
 
